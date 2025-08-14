@@ -19,7 +19,8 @@ It allows users to **analyze symptoms**, **upload medical images**, **get AI-ass
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-<img src="screenshots/home.png" width="800">
+
+<img width="1920" height="1007" alt="Screenshot (395)" src="https://github.com/user-attachments/assets/cc273033-f66c-47fc-907e-5b200d331fab" />
 
 ### 👤 Profile Page
 <img src="screenshots/profile.png" width="800">
