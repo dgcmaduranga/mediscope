@@ -4,31 +4,31 @@ Mediscope is a Next.js 15 + Firebase powered web application that helps users an
 
 ✨ Features
 
-🔐 Authentication – Secure login & register with Firebase Auth
+   🔐 Authentication – Secure login & register with Firebase Auth
 
-👤 Profile Management – Update profile with avatar upload
+  👤 Profile Management – Update profile with avatar upload
 
-🧠 AI Analysis – Symptom analysis powered by OpenAI
+  🧠 AI Analysis – Symptom analysis powered by OpenAI
 
-💊 Medicine Database – Search & learn about medications
+  💊 Medicine Database – Search & learn about medications
 
-🩻 Image Upload & Scan – PDF / Image OCR for medical reports
+  🩻 Image Upload & Scan – PDF / Image OCR for medical reports
 
-📊 Knowledge Base – Health-related educational content
+  📊 Knowledge Base – Health-related educational content
 
-📱 Responsive UI – Mobile, tablet & desktop friendly
+  📱 Responsive UI – Mobile, tablet & desktop friendly
 
 🛠 Tech Stack
 
-Frontend: Next.js 15, React, TypeScript, MUI
+  Frontend: Next.js 15, React, TypeScript, MUI
 
-Backend: Firebase Functions, Firestore
+  Backend: Firebase Functions, Firestore
 
-AI: OpenAI API
+  AI: OpenAI API
 
-Storage: Firebase Storage
+  Storage: Firebase Storage
 
-Deployment: Firebase Hosting
+   Deployment: Firebase Hosting
 
 📦 Installation
 # Clone repo
