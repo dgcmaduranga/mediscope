@@ -44,7 +44,7 @@ It allows users to **analyze symptoms**, **upload medical images**, **get AI-ass
 
 ## 🛠 Tech Stack
 
-- **Frontend:** Next.js 15, React, Material UI  
+- **Frontend:** Next.js 15,TypeScript, React, Material UI  
 - **Backend & Auth:** Firebase Authentication, Firebase Firestore  
 - **Storage:** Firebase Cloud Storage  
 - **AI Processing:** OpenAI API  
