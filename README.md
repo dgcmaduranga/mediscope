@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🩺 Mediscope – AI Powered Medical Analysis Platform
 
-## Getting Started
+Mediscope is a Next.js 15 + Firebase powered web application that helps users analyze medical data, detect symptoms, and provide AI-powered health insights.
 
-First, run the development server:
+✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔐 Authentication – Secure login & register with Firebase Auth
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👤 Profile Management – Update profile with avatar upload
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🧠 AI Analysis – Symptom analysis powered by OpenAI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💊 Medicine Database – Search & learn about medications
 
-## Learn More
+🩻 Image Upload & Scan – PDF / Image OCR for medical reports
 
-To learn more about Next.js, take a look at the following resources:
+📊 Knowledge Base – Health-related educational content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📱 Responsive UI – Mobile, tablet & desktop friendly
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🛠 Tech Stack
 
-## Deploy on Vercel
+Frontend: Next.js 15, React, TypeScript, MUI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Backend: Firebase Functions, Firestore
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+AI: OpenAI API
+
+Storage: Firebase Storage
+
+Deployment: Firebase Hosting
+
+📦 Installation
+# Clone repo
+     git clone https://github.com/USERNAME/mediscope.git
+
+# Install dependencies
+     npm install
+
+# Run development server
+     npm run dev
+🔑 Environment Variables
+
+Create a .env.local file and add:
+
+     NEXT_PUBLIC_FIREBASE_API_KEY=your_key
+     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_domain
+     OPENAI_API_KEY=your_openai_key
+
+📜 License
+
+This project is licensed under the MIT License – you can freely use and modify it.
+
+💬 Author
+
+👨‍💻 Developed by Charith Maduranga
+📧 Contact:charithgamage19@gmail.com
+
+
+
