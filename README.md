@@ -23,13 +23,22 @@ It allows users to **analyze symptoms**, **upload medical images**, **get AI-ass
 <img width="1920" height="1007" alt="Screenshot (395)" src="https://github.com/user-attachments/assets/cc273033-f66c-47fc-907e-5b200d331fab" />
 
 ### 👤 Profile Page
-<img src="screenshots/profile.png" width="800">
+<img width="1920" height="989" alt="Screenshot (397)" src="https://github.com/user-attachments/assets/ad2f0f47-e7e7-4352-8eba-7c2b1e728c80" />
 
-### 🔍 Analyze Page
-<img src="screenshots/analyze.png" width="800">
+# 🔍 Analyze Page
+
+<img width="1920" height="1010" alt="Screenshot (398)" src="https://github.com/user-attachments/assets/95de57f3-c604-4373-9c78-9690e01d3418" />
+
+<img width="1920" height="972" alt="Screenshot (399)" src="https://github.com/user-attachments/assets/bbd8831c-69ed-46dd-ba73-1fbcf4bb5a86" />
+
+<img width="1920" height="982" alt="Screenshot (400)" src="https://github.com/user-attachments/assets/986345bc-ffb4-4990-b161-f160e15b9935" />
+
+<img width="1920" height="979" alt="Screenshot (401)" src="https://github.com/user-attachments/assets/5b3ee45f-0318-440c-b7c3-dad6993efc95" />
 
 ### 📚 Knowledge Base
-<img src="screenshots/knowledge.png" width="800">
+<img width="1920" height="1011" alt="Screenshot (402)" src="https://github.com/user-attachments/assets/dc0eb7db-55bb-4c0e-93c6-0f2852aad47a" />
+
+
 
 ---
 
