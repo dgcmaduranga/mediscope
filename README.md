@@ -9,7 +9,7 @@ It allows users to **analyze symptoms**, **upload medical images**, **get AI-ass
 
 ✅ **User Authentication** – Sign up, login, and secure logout with Firebase Auth  
 ✅ **Profile Management** – Upload avatar, edit profile info  
-✅ **AI Symptom Analyzer** – Analyze symptoms and images with AI integration  
+✅ **AI Symptom Analyzer** – Analyze symptoms / medical report and images with AI integration  
 ✅ **Medical Knowledge Base** – Search and explore medical information  
 ✅ **Responsive Design** – Works perfectly on desktop and mobile  
 ✅ **Secure File Uploads** – Medical file uploads to Firebase Storage  
