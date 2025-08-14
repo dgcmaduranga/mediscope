@@ -1,0 +1,186 @@
+[debug] [2025-08-14T22:38:48.242Z] ----------------------------------------------------------------------
+[debug] [2025-08-14T22:38:48.246Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Charith Gamage\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2025-08-14T22:38:48.247Z] CLI Version:   14.12.0
+[debug] [2025-08-14T22:38:48.247Z] Platform:      win32
+[debug] [2025-08-14T22:38:48.247Z] Node Version:  v22.15.1
+[debug] [2025-08-14T22:38:48.248Z] Time:          Fri Aug 15 2025 04:08:48 GMT+0530 (India Standard Time)
+[debug] [2025-08-14T22:38:48.248Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-14T22:38:48.423Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-14T22:38:48.424Z] > authorizing via signed-in user (charithgamage19@gmail.com)
+[debug] [2025-08-14T22:38:48.424Z] [iam] checking project medisense-7e3e6 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-14T22:38:48.425Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:48.426Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:48.427Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions [none]
+[debug] [2025-08-14T22:38:48.427Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions x-goog-quota-user=projects/medisense-7e3e6
+[debug] [2025-08-14T22:38:48.427Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-14T22:38:50.168Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions 200
+[debug] [2025-08-14T22:38:50.169Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-14T22:38:50.169Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:50.169Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:50.169Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/medisense-7e3e6 [none]
+[debug] [2025-08-14T22:38:50.971Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/medisense-7e3e6 200
+[debug] [2025-08-14T22:38:50.971Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/medisense-7e3e6 {"projectId":"medisense-7e3e6","projectNumber":"973151706395","displayName":"MEDISENSE","name":"projects/medisense-7e3e6","resources":{"hostingSite":"medisense-7e3e6"},"state":"ACTIVE","etag":"1_bbd0170b-e6ea-420b-9c0f-18812428004d"}
+[debug] [2025-08-14T22:38:53.366Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:53.366Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:53.366Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites pageToken=&pageSize=10
+[debug] [2025-08-14T22:38:54.749Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites 200
+[debug] [2025-08-14T22:38:54.750Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites {"sites":[{"name":"projects/medisense-7e3e6/sites/medisense-7e3e6","defaultUrl":"https://medisense-7e3e6.web.app","appId":"1:973151706395:web:00c7f982ba0446e49887be","type":"DEFAULT_SITE"}]}
+[debug] [2025-08-14T22:38:54.750Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:54.750Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:38:54.750Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973151706395:web:00c7f982ba0446e49887be/config [none]
+[debug] [2025-08-14T22:38:55.810Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973151706395:web:00c7f982ba0446e49887be/config 200
+[debug] [2025-08-14T22:38:55.811Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973151706395:web:00c7f982ba0446e49887be/config {"projectId":"medisense-7e3e6","appId":"1:973151706395:web:00c7f982ba0446e49887be","storageBucket":"medisense-7e3e6.firebasestorage.app","apiKey":"AIzaSyDyIffEZJvHFIU6rmHqNYchUfFnHVuy3vI","authDomain":"medisense-7e3e6.firebaseapp.com","messagingSenderId":"973151706395"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-08-14T22:39:01.465Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:39:01.465Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:39:01.466Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites/medisense-7e3e6 [none]
+[debug] [2025-08-14T22:39:02.911Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites/medisense-7e3e6 200
+[debug] [2025-08-14T22:39:02.911Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites/medisense-7e3e6 {"name":"projects/medisense-7e3e6/sites/medisense-7e3e6","defaultUrl":"https://medisense-7e3e6.web.app","appId":"1:973151706395:web:00c7f982ba0446e49887be","type":"DEFAULT_SITE"}
+[info]  ⚠ Invalid next.config.ts options detected: 
+
+[info]  ⚠     Unrecognized key(s) in object: 'appDir', 'forceDynamic' at "experimental"
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+
+[info]    ▲ Next.js 15.4.6
+
+[info]    - Environments: .env.local
+   - Experiments (use with caution):
+     ✓ appDir
+     ✓ forceDynamic
+
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully in 5.0s
+
+[info]    Skipping validation of types
+
+[info]    Skipping linting
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/12) ...
+
+[info]    Generating static pages (3/12) 
+
+[info] Warning: Please use the `legacy` build in Node.js environments.
+
+[info]    Generating static pages (6/12) 
+
+[info] Error occurred prerendering page "/analyze". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: DOMMatrix is not defined
+    at 78886 (C:\Users\Charith Gamage\mediscope\web\.next\server\app\analyze\page.js:3:95562)
+    at Object.c [as require] (C:\Users\Charith Gamage\mediscope\web\.next\server\webpack-runtime.js:1:128) {
+  digest: '3229818878'
+}
+Export encountered an error on /analyze/page: /analyze, exiting the build.
+
+[info]  ⨯ Next.js build worker exited with code: 1 and signal: null
+
+[debug] [2025-08-14T22:39:19.416Z] Error: ENOENT: no such file or directory, open 'C:\Users\Charith Gamage\mediscope\web\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-14T22:50:09.259Z] ----------------------------------------------------------------------
+[debug] [2025-08-14T22:50:09.265Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Charith Gamage\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2025-08-14T22:50:09.265Z] CLI Version:   14.12.0
+[debug] [2025-08-14T22:50:09.265Z] Platform:      win32
+[debug] [2025-08-14T22:50:09.266Z] Node Version:  v22.15.1
+[debug] [2025-08-14T22:50:09.266Z] Time:          Fri Aug 15 2025 04:20:09 GMT+0530 (India Standard Time)
+[debug] [2025-08-14T22:50:09.267Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-14T22:50:09.476Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-14T22:50:09.476Z] > authorizing via signed-in user (charithgamage19@gmail.com)
+[debug] [2025-08-14T22:50:09.477Z] [iam] checking project medisense-7e3e6 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-14T22:50:09.478Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:09.478Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:09.479Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions [none]
+[debug] [2025-08-14T22:50:09.479Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions x-goog-quota-user=projects/medisense-7e3e6
+[debug] [2025-08-14T22:50:09.480Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-14T22:50:11.224Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions 200
+[debug] [2025-08-14T22:50:11.224Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medisense-7e3e6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-14T22:50:11.225Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:11.225Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:11.225Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/medisense-7e3e6 [none]
+[debug] [2025-08-14T22:50:12.080Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/medisense-7e3e6 200
+[debug] [2025-08-14T22:50:12.080Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/medisense-7e3e6 {"projectId":"medisense-7e3e6","projectNumber":"973151706395","displayName":"MEDISENSE","name":"projects/medisense-7e3e6","resources":{"hostingSite":"medisense-7e3e6"},"state":"ACTIVE","etag":"1_bbd0170b-e6ea-420b-9c0f-18812428004d"}
+[debug] [2025-08-14T22:50:15.336Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:15.336Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:15.337Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites pageToken=&pageSize=10
+[debug] [2025-08-14T22:50:16.769Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites 200
+[debug] [2025-08-14T22:50:16.769Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites {"sites":[{"name":"projects/medisense-7e3e6/sites/medisense-7e3e6","defaultUrl":"https://medisense-7e3e6.web.app","appId":"1:973151706395:web:00c7f982ba0446e49887be","type":"DEFAULT_SITE"}]}
+[debug] [2025-08-14T22:50:16.769Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:16.770Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:16.770Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973151706395:web:00c7f982ba0446e49887be/config [none]
+[debug] [2025-08-14T22:50:17.926Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973151706395:web:00c7f982ba0446e49887be/config 200
+[debug] [2025-08-14T22:50:17.927Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973151706395:web:00c7f982ba0446e49887be/config {"projectId":"medisense-7e3e6","appId":"1:973151706395:web:00c7f982ba0446e49887be","storageBucket":"medisense-7e3e6.firebasestorage.app","apiKey":"AIzaSyDyIffEZJvHFIU6rmHqNYchUfFnHVuy3vI","authDomain":"medisense-7e3e6.firebaseapp.com","messagingSenderId":"973151706395"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-08-14T22:50:23.752Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:23.752Z] Checked if tokens are valid: true, expires at: 1755213944129
+[debug] [2025-08-14T22:50:23.753Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites/medisense-7e3e6 [none]
+[debug] [2025-08-14T22:50:25.130Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites/medisense-7e3e6 200
+[debug] [2025-08-14T22:50:25.130Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/medisense-7e3e6/sites/medisense-7e3e6 {"name":"projects/medisense-7e3e6/sites/medisense-7e3e6","defaultUrl":"https://medisense-7e3e6.web.app","appId":"1:973151706395:web:00c7f982ba0446e49887be","type":"DEFAULT_SITE"}
+[info]  ⚠ Invalid next.config.ts options detected: 
+
+[info]  ⚠     Unrecognized key(s) in object: 'appDir', 'forceDynamic' at "experimental"
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+
+[info]    ▲ Next.js 15.4.6
+
+[info]    - Environments: .env.local
+   - Experiments (use with caution):
+     ✓ appDir
+     ✓ forceDynamic
+
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully in 6.0s
+
+[info]    Skipping validation of types
+
+[info]    Skipping linting
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/12) ...
+
+[info]    Generating static pages (3/12) 
+
+[info]    Generating static pages (6/12) 
+
+[info] Warning: Please use the `legacy` build in Node.js environments.
+
+[info] Error occurred prerendering page "/analyze". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: DOMMatrix is not defined
+    at 78886 (C:\Users\Charith Gamage\mediscope\web\.next\server\app\analyze\page.js:3:95562)
+    at Object.c [as require] (C:\Users\Charith Gamage\mediscope\web\.next\server\webpack-runtime.js:1:128) {
+  digest: '3229818878'
+}
+Export encountered an error on /analyze/page: /analyze, exiting the build.
+
+[info]  ⨯ Next.js build worker exited with code: 1 and signal: null
+
+[debug] [2025-08-14T22:50:46.636Z] Error: ENOENT: no such file or directory, open 'C:\Users\Charith Gamage\mediscope\web\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.

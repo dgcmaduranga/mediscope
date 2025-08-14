@@ -1,26 +1,188 @@
-@import "tailwindcss";
+/* ========= Global Reset & Base ========= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+html, body { height: 100%; }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #0b1530;              /* deep navy */
+  color: #e7ecff;                   /* light text */
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter,
+    "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 2px; }
+
+/* ========= Strong Color Variables ========= */
+:root {
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-soft: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.10);
+  --ring: rgba(255, 255, 255, 0.14);
+
+  /* vivid gradients per card group */
+  --a-from: #00c6ff;  --a-to: #0072ff;   /* cyan → blue   */
+  --b-from: #ff6a00;  --b-to: #ee0979;   /* orange → pink */
+  --c-from: #7f00ff;  --c-to: #e100ff;   /* purple → magenta */
+  --d-from: #00f260;  --d-to: #0575e6;   /* green → blue  */
+  --e-from: #f7971e;  --e-to: #ffd200;   /* orange → yellow */
+  --f-from: #ff512f;  --f-to: #dd2476;   /* red → purple  */
+}
+
+/* ========= Layout helper ========= */
+.page-wrap { min-height: calc(100dvh - 64px); }
+
+/* ========= Home Cards ========= */
+.home-card {
+  width: 100%;
+  display: flex;
+  border-radius: 16px;
+  position: relative;
+  isolation: isolate;                 /* glow stays behind */
+  transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
+}
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.28);
+}
+
+/* CardContent inside */
+.home-card .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-soft));
+  border: 1px solid var(--border);
+  backdrop-filter: blur(4px);
+}
+
+/* Button pinned to bottom */
+.home-open-btn { margin-top: auto; }
+
+/* Icon tile */
+.home-card .icon-box {
+  width: 34px; height: 34px; border-radius: 10px;
+  display: grid; place-items: center;
+  background: var(--ring);
+  backdrop-filter: blur(4px);
+}
+
+/* ========= Vivid Glows per group ========= */
+.home-card::before {
+  content: "";
+  position: absolute; inset: -1px; z-index: -1;
+  border-radius: 18px;
+  filter: blur(18px);
+  opacity: .55;                       /* stronger */
+  transition: opacity .2s ease, transform .2s ease;
+}
+.home-card:hover::before { opacity: .85; transform: scale(1.01); }
+
+/* A */
+.grad-a::before {
+  background:
+    radial-gradient(700px 240px at 12% 0%,
+      color-mix(in oklab, var(--a-from) 70%, transparent), transparent 60%),
+    radial-gradient(600px 220px at 88% 100%,
+      color-mix(in oklab, var(--a-to) 60%, transparent), transparent 60%);
+}
+.grad-a .MuiCardContent-root {
+  border-color: color-mix(in oklab, var(--a-to) 35%, var(--border));
+}
+
+/* B */
+.grad-b::before {
+  background:
+    radial-gradient(700px 240px at 90% 0%,
+      color-mix(in oklab, var(--b-from) 70%, transparent), transparent 60%),
+    radial-gradient(600px 220px at 10% 100%,
+      color-mix(in oklab, var(--b-to) 60%, transparent), transparent 60%);
+}
+.grad-b .MuiCardContent-root {
+  border-color: color-mix(in oklab, var(--b-to) 35%, var(--border));
+}
+
+/* C */
+.grad-c::before {
+  background:
+    radial-gradient(700px 240px at 8% 100%,
+      color-mix(in oklab, var(--c-from) 70%, transparent), transparent 60%),
+    radial-gradient(600px 220px at 92% 10%,
+      color-mix(in oklab, var(--c-to) 60%, transparent), transparent 60%);
+}
+.grad-c .MuiCardContent-root {
+  border-color: color-mix(in oklab, var(--c-to) 35%, var(--border));
+}
+
+/* D */
+.grad-d::before {
+  background:
+    radial-gradient(700px 240px at 50% 0%,
+      color-mix(in oklab, var(--d-from) 70%, transparent), transparent 60%),
+    radial-gradient(600px 220px at 50% 100%,
+      color-mix(in oklab, var(--d-to) 60%, transparent), transparent 60%);
+}
+.grad-d .MuiCardContent-root {
+  border-color: color-mix(in oklab, var(--d-to) 35%, var(--border));
+}
+
+/* E */
+.grad-e::before {
+  background:
+    radial-gradient(700px 240px at 20% 0%,
+      color-mix(in oklab, var(--e-from) 70%, transparent), transparent 60%),
+    radial-gradient(600px 220px at 80% 100%,
+      color-mix(in oklab, var(--e-to) 60%, transparent), transparent 60%);
+}
+.grad-e .MuiCardContent-root {
+  border-color: color-mix(in oklab, var(--e-to) 35%, var(--border));
+}
+
+/* F */
+.grad-f::before {
+  background:
+    radial-gradient(700px 240px at 80% 0%,
+      color-mix(in oklab, var(--f-from) 70%, transparent), transparent 60%),
+    radial-gradient(600px 220px at 20% 100%,
+      color-mix(in oklab, var(--f-to) 60%, transparent), transparent 60%);
+}
+.grad-f .MuiCardContent-root {
+  border-color: color-mix(in oklab, var(--f-to) 35%, var(--border));
+}
+
+/* ========= MUI polish ========= */
+.MuiButton-root {
+  text-transform: none;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.MuiChip-root { background: rgba(255,255,255,0.14); }
+.MuiAppBar-root { backdrop-filter: saturate(1.2) blur(6px); }
+
+/* ========= Scrollbar ========= */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.06); }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.28);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.36); }
+
+/* ========= Small utils ========= */
+.muted { opacity: .75; }
+.center { display: grid; place-items: center; }
+

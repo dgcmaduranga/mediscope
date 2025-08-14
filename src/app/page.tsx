@@ -1,103 +1,148 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { useUser } from "../store/useUser";
+import { useAuthModal } from "../store/useAuthModal";
+import {
+  Box, Container, Card, CardContent, Typography, Button, Stack, Chip,
+} from "@mui/material";
+import AnalyticsIcon from "@mui/icons-material/Analytics";
+import TroubleshootIcon from "@mui/icons-material/Troubleshoot";
+import HealingIcon from "@mui/icons-material/Healing";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import MedicationIcon from "@mui/icons-material/Medication";
+import PersonIcon from "@mui/icons-material/Person";
+
+type CardItem = {
+  href: string; title: string; desc: string;
+  grad: "a"|"b"|"c"|"d"|"e"|"f"; icon: JSX.Element; tag?: string;
+};
+
+const cards: CardItem[] = [
+  { href:"/analyze",   title:"Analyze Reports",  desc:"Upload lab/X‑ray/other medical reports for AI summary.", grad:"a", icon:<AnalyticsIcon/>,   tag:"OCR + AI" },
+  { href:"/symptoms",  title:"Symptoms Checker", desc:"Enter symptoms to get possible categories + advice.",    grad:"b", icon:<TroubleshootIcon/>, tag:"Triage" },
+  { href:"/skin",      title:"Skin Check",       desc:"Upload a skin photo for top‑k conditions (screening).", grad:"c", icon:<HealingIcon/>,     tag:"Vision" },
+  { href:"/knowledge", title:"Knowledge",        desc:"Wikipedia‑backed education cards for conditions/terms.",grad:"d", icon:<MenuBookIcon/>,    tag:"Learn" },
+  { href:"/meds",      title:"Meds Checker",     desc:"Check for possible medication interactions.",           grad:"e", icon:<MedicationIcon/>,  tag:"Safety" },
+  { href:"/profile",   title:"Profile",          desc:"Privacy, consent, language, and data controls.",        grad:"f", icon:<PersonIcon/> },
+];
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const { user } = useUser();
+  const { openModal } = useAuthModal();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  const handleNav: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement> =
+    (e) => { if (!user) { e.preventDefault(); openModal(); } };
+
+  return (
+    <Box sx={{
+      py: { xs: 1.5, md: 2 },
+      background:
+        "radial-gradient(1200px 600px at 0% 0%, rgba(114,125,255,.12), transparent 60%), " +
+        "radial-gradient(1200px 600px at 100% 20%, rgba(0,220,190,.10), transparent 60%)",
+    }}>
+      <Container maxWidth="xl">
+        {/* Heading */}
+        <Stack spacing={0.5} sx={{ mb: 2 }}>
+          <Typography variant="h4" sx={{
+            fontWeight: 900, letterSpacing: .2,
+            background: "linear-gradient(90deg,#A5B4FC 0%, #5EEAD4 50%, #93C5FD 100%)",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+          }}>
+            Welcome to CareLens
+          </Typography>
+          <Typography variant="body1" component="div" sx={{ opacity: .9 }}>
+            AI‑assisted health education tools
+            <Chip label="Beta" size="small" sx={{ ml: 1 }} />{" "}
+            <span style={{ opacity: .75 }}>(information only — not a diagnosis).</span>
+          </Typography>
+        </Stack>
+
+        {/* ==== Cards grid (CSS Grid) ==== */}
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr" },
+            gap: 2,
+            alignItems: "stretch",
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          {cards.map((c) => (
+            <Card
+              key={c.href}
+              className={`home-card grad-${c.grad}`}
+              elevation={0}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: 3,
+                p: 0.5,
+                width: "100%",
+                boxShadow: "0 1px 0 rgba(255,255,255,0.06) inset, 0 10px 30px rgba(0,0,0,0.25)",
+                transition: "transform .2s ease, box-shadow .2s ease",
+                "&:hover": { transform: "translateY(-4px)" },
+              }}
+            >
+              <CardContent
+                sx={{
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1.2,
+                  borderRadius: 2.5,
+                  px: 2, py: 1.8,
+                  background: "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                }}
+              >
+                {/* Title row */}
+                <Stack direction="row" spacing={1.2} alignItems="center">
+                  <Box sx={{
+                    width: 34, height: 34, borderRadius: "10px",
+                    display: "grid", placeItems: "center",
+                    background: "rgba(255,255,255,0.12)", backdropFilter: "blur(4px)",
+                  }}>
+                    {c.icon}
+                  </Box>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
+                    {c.title}
+                  </Typography>
+                  {c.tag && (
+                    <Chip
+                      label={c.tag}
+                      size="small"
+                      sx={{ ml: "auto", bgcolor: "rgba(255,255,255,0.16)" }}
+                    />
+                  )}
+                </Stack>
+
+                {/* Description */}
+                <Typography variant="body2" sx={{ opacity: .9, lineHeight: 1.35 }}>
+                  {c.desc}
+                </Typography>
+
+                {/* Button pinned to bottom */}
+                <Box sx={{ mt: "auto" }}>
+                  <Button
+                    component={Link}
+                    href={c.href}
+                    onClick={handleNav}
+                    variant="contained"
+                    size="small"
+                    sx={{ fontWeight: 700, letterSpacing: .6, px: 2 }}
+                  >
+                    OPEN
+                  </Button>
+                </Box>
+              </CardContent>
+            </Card>
+          ))}
+        </Box>
+
+        <Typography variant="caption" sx={{ display: "block", mt: 2, opacity: .7 }}>
+          CareLens is for information only. It is not a medical diagnosis. Seek emergency care for severe symptoms.
+        </Typography>
+      </Container>
+    </Box>
   );
 }
