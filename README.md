@@ -1,60 +1,90 @@
-🩺 Mediscope – AI Powered Medical Analysis Platform
+# 🩺 Mediscope – AI-Powered Medical Analysis Platform
 
-Mediscope is a Next.js 15 + Firebase powered web application that helps users analyze medical data, detect symptoms, and provide AI-powered health insights.
+Mediscope is a modern, AI-powered medical analysis and knowledge platform built with **Next.js**, **Firebase**, and **Material UI**.  
+It allows users to **analyze symptoms**, **upload medical images**, **get AI-assisted insights**, and manage their profile securely.
 
-✨ Features
+---
 
-   🔐 Authentication – Secure login & register with Firebase Auth
+## 🚀 Features
 
-  👤 Profile Management – Update profile with avatar upload
+✅ **User Authentication** – Sign up, login, and secure logout with Firebase Auth  
+✅ **Profile Management** – Upload avatar, edit profile info  
+✅ **AI Symptom Analyzer** – Analyze symptoms and images with AI integration  
+✅ **Medical Knowledge Base** – Search and explore medical information  
+✅ **Responsive Design** – Works perfectly on desktop and mobile  
+✅ **Secure File Uploads** – Medical file uploads to Firebase Storage  
 
-  🧠 AI Analysis – Symptom analysis powered by OpenAI
+---
 
-  💊 Medicine Database – Search & learn about medications
+## 📸 Screenshots
 
-  🩻 Image Upload & Scan – PDF / Image OCR for medical reports
+### 🏠 Home Page
+<img src="screenshots/home.png" width="800">
 
-  📊 Knowledge Base – Health-related educational content
+### 👤 Profile Page
+<img src="screenshots/profile.png" width="800">
 
-  📱 Responsive UI – Mobile, tablet & desktop friendly
+### 🔍 Analyze Page
+<img src="screenshots/analyze.png" width="800">
 
-🛠 Tech Stack
+### 📚 Knowledge Base
+<img src="screenshots/knowledge.png" width="800">
 
-  Frontend: Next.js 15, React, TypeScript, MUI
+---
 
-  Backend: Firebase Functions, Firestore
+## 🛠 Tech Stack
 
-  AI: OpenAI API
+- **Frontend:** Next.js 15, React, Material UI  
+- **Backend & Auth:** Firebase Authentication, Firebase Firestore  
+- **Storage:** Firebase Cloud Storage  
+- **AI Processing:** OpenAI API  
+- **Deployment:** Firebase Hosting  
 
-  Storage: Firebase Storage
+---
+## 📦 Installation
 
-   Deployment: Firebase Hosting
+# Clone the repository
+     git clone https://github.com/your-username/mediscope.git
 
-📦 Installation
-# Clone repo
-     git clone https://github.com/USERNAME/mediscope.git
+# Navigate to the project folder
+      cd mediscope
 
 # Install dependencies
-     npm install
+      npm install
 
 # Run development server
-     npm run dev
+      npm run dev
+
+
 🔑 Environment Variables
 
-Create a .env.local file and add:
+Create a .env.local file in the root directory and add:
 
-     NEXT_PUBLIC_FIREBASE_API_KEY=your_key
-     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_domain
-     OPENAI_API_KEY=your_openai_key
+     NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+     NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+     NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+     NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+     NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+     OPENAI_API_KEY=your_openai_api_key
+
+🚀 Deployment
+
+This project can be deployed on Firebase Hosting:
+
+     firebase login
+     firebase init
+     firebase deploy
 
 📜 License
 
-This project is licensed under the MIT License – you can freely use and modify it.
+This project is licensed under the MIT License – feel free to modify and use it.
 
-💬 Author
+💡 Author
 
-👨‍💻 Developed by Charith Maduranga
-📧 Contact:charithgamage19@gmail.com
+Charith Maduranga
+📧 Email: charithgamage19@gmail.com
+🔗 LinkedIn | GitHub
 
 
 
