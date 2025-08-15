@@ -88,7 +88,7 @@ This project can be deployed on Firebase Hosting:
 
 📜 License
 
-This project is licensed under the MIT License – feel free to modify and use it.
+This project is licensed under the MIT License 
 
 💡 Author
 
