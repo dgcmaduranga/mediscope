@@ -1,4 +1,4 @@
-# 🩺 CareLense – AI-Powered Medical Analysis Platform
+# 🩺 CareLens – AI-Powered Medical Analysis Platform
 
 Mediscope is a modern, AI-powered medical analysis and knowledge platform built with **Next.js**, **Firebase**, and **Material UI**.  
 It allows users to **analyze symptoms**, **upload medical images**, **get AI-assisted insights**, and manage their profile securely.
